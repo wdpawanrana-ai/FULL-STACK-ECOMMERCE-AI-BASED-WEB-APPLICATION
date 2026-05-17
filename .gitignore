@@ -1,0 +1,64 @@
+# -------------------------
+# Node / Next.js / MERN-stack
+# -------------------------
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*      # .env.local, .env.production, etc
+**/.env
+**/.env.*
+
+# Build output
+.next/
+out/
+dist/
+build/
+**/.next/
+**/dist/
+
+# Production server files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / testing
+coverage/
+.nyc_output/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# TypeScript build output
+*.tsbuildinfo
+
+# PostgreSQL-related things
+pg_data/
+*.sql
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Ignore uploads or public assets if needed
+uploads/
+public/uploads/
+
+# Ignore package lock files (optional)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
