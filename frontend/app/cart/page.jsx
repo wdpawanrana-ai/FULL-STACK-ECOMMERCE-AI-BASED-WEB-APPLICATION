@@ -163,7 +163,7 @@ export default function CartPage() {
                                 <span className="text-3xl font-black text-primary">₹{total.toLocaleString()}</span>
                             </div>
 
-                            <Link href="/">
+                            <Link href="/payment">
                                 <button className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg tracking-wide shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 active:translate-y-0 transition-all flex items-center justify-center gap-3">
                                     Proceed to Checkout
                                     <ArrowRight size={20} />

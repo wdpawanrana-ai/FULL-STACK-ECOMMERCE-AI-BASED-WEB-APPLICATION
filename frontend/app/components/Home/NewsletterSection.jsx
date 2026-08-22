@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Mail, Send, CheckCircle2 } from "lucide-react";
 
+/**
+ * NewsletterSection captures subscriber emails.
+ * Includes interactive confirmation screens.
+ */
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);

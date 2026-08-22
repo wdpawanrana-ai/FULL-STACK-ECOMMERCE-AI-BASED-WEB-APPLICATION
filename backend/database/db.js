@@ -1,12 +1,16 @@
 import pkg from "pg";
-const { Client } = pkg;
+import { config } from "dotenv";
+
+const { Client, Pool } = pkg;
+
+config({ path: "./config/config.env" });
 
 const database = new Client({
-  user: "postgres",
-  host: "localhost",
-  database: "egp_store",
-  password: "123456789",
-  port: 5432,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 try {

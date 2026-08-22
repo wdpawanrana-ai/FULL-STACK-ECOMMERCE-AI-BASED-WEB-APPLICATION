@@ -146,12 +146,12 @@ const CartSidebar = () => {
               </div>
             </div>
 
-            <Link href="/cart">
+            <Link href="/payment">
               <button
                 className="w-full py-4 bg-primary text-white font-bold rounded-2xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all text-lg"
                 onClick={() => dispatch(toggleCart())}
               >
-                View Full Cart
+                Checkout Now
               </button>
             </Link>
             <p className="text-[10px] text-foreground/30 text-center mt-4 uppercase tracking-widest">

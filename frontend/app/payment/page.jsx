@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import { } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "../components/PaymentForm";
 import { axiosInstance } from "../lib/axios";
@@ -36,8 +36,9 @@ const Payment = () => {
     });
 
     useEffect(() => {
-        if (!isCheckingAuth && !authUser) {
-            router.push("/products");
+        if (isCheckingAuth === false && !authUser) {
+            toast.error("Please login to proceed to checkout.");
+            router.push("/");
         }
     }, [isCheckingAuth, authUser, router]);
 

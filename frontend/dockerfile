@@ -1,0 +1,16 @@
+
+FROM node:20
+
+WORKDIR /app
+
+COPY package*.json ./
+
+# Install lightningcss correctly for Linux
+RUN npm install
+
+# Copy source AFTER node_modules
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PoojaEV | Premium Electric Scooters & Spare Parts",
-  description: "The ultimate destination for next-gen electric mobility. Shop authentic spare parts and high-performance scooters.",
+  title: "Economics | Smart Rides, Greener Future",
+  description: "Economics is the ultimate destination for next-gen electric mobility. Shop authentic spare parts and high-performance electric scooters.",
 };
 
 export default function RootLayout({ children }) {

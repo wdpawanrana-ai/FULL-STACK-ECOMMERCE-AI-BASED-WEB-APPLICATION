@@ -10,7 +10,13 @@ import CategoryGrid from "./components/Home/CategoryGrid";
 import VideoShowcase from "./components/Home/VideoShowcase";
 import Testimonials from "./components/Home/Testimonials";
 
+/**
+ * Home component serves as the landing page of PoojaEV.
+ * Configures the Hero image slider, dynamic category selections, product grids,
+ * feature listings, video reels, and localized customer experience testimonials.
+ */
 export default function Home() {
+  // Redux Selectors retrieving products sorted by date (new) and rating (topRated) descriptors
   const { newProducts = [], topRatedProducts = [] } = useSelector((state) => state.product);
 
 
