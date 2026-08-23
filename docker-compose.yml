@@ -21,7 +21,7 @@ services:
       context: ./frontend
       dockerfile: dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=http://62.72.58.5:4000
+        - NEXT_PUBLIC_API_URL=http://62.72.58.5:4000/api/v1
     container_name: frontend_c
     ports:
       - "3000:3000"
@@ -34,7 +34,7 @@ services:
       context: ./admin
       dockerfile: dockerfile
       args:
-        - VITE_API_URL=http://62.72.58.5:4000
+        - VITE_API_URL=http://62.72.58.5:4000/api/v1
     container_name: admin_c
     ports:
       - "5173:80"
