@@ -63,3 +63,4 @@ public/uploads/
 # yarn.lock
 # pnpm-lock.yaml
 
+docker-compose.local.yml
