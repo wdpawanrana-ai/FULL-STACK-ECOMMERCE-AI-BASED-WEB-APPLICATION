@@ -1,0 +1,47 @@
+name: Deploy EGPooja to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. Get latest code from GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Copy project to VPS
+      - name: Copy project to VPS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "."
+          target: "/root/egpooja"
+
+      # 3. Build and restart Docker containers
+      - name: Deploy Docker containers
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+
+          script: |
+            cd /root/egpooja
+
+            echo "Starting deployment..."
+
+            docker compose up -d --build
+
+            echo "Checking containers..."
+
+            docker compose ps
+
+            echo "Deployment completed!"
